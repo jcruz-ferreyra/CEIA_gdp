@@ -5,31 +5,31 @@ codirector, % Uncomment to add a codirector to the title page
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Automatización de Censos Ciclistas mediante Visión por Computadora} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
-\posgrado{Carrera de Especialización en Sistemas Embebidos} 
+%\posgrado{Carrera de Especialización en Sistemas Embebidos} 
 %\posgrado{Carrera de Especialización en Internet de las Cosas} 
-%\posgrado{Carrera de Especialización en Inteligencia Artificial}
+\posgrado{Carrera de Especialización en Inteligencia Artificial}
 %\posgrado{Maestría en Sistemas Embebidos} 
 %\posgrado{Maestría en Internet de las cosas}
 % IMPORTANTE: no omitir titulaciones ni tildación en los nombres, también se recomienda escribir los nombres completos (tal cual los tienen en su documento)
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Título y Nombre del autor}
+\autor{Juan Cruz Ferreyra}
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Título y Nombre del director}
-\pertenenciaDirector{pertenencia} 
-\codirector{Título y Nombre del codirector} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
-\pertenenciaCoDirector{FIUBA}
+\director{TBD}
+\pertenenciaDirector{FIUBA} 
+\codirector{TBD} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
+\pertenenciaCoDirector{Ente de la Movilidad de Rosario}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
 \cliente{Nombre del cliente}
 \empresaCliente{Empresa del cliente}
  
-\fechaINICIO{30 de abril de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2023} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2024}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{18 de junio de 2024}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{13 de agosto de 2024} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{TBD}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -58,7 +58,7 @@ codirector, % Uncomment to add a codirector to the title page
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 5 inclusive                & {día} de {mes} de 202X \\ \hline
+1      & Se completa hasta el punto 5 inclusive                & {2} de {julio} de 2024 \\ \hline
 %2      & Se completa hasta el punto 9 inclusive
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
@@ -84,7 +84,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de una caldera industrial}. El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{600} horas y un costo estimado de \textcolor{red}{\$ XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ''\ttitle'' y consistirá en \textcolor{gray}{la automatización del conteo y la clasificación de ciclistas en la ciudad de Rosario, provincia de Santa Fe, mediante el uso de visión por computadora}. El trabajo tendrá un presupuesto preliminar estimado de \textcolor{gray}{600} horas y un costo estimado de \textcolor{gray}{\$ XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -105,51 +105,43 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección. En cada entrega parcial deben eliminar los comandos begin y end del bloque consigna de las secciones que hayan completado.
-El objetivo es que el lector, en una o dos páginas, exponga de qué se trata el proyecto y cuáles son sus desafíos, cuál es la motivación para realizarlo y su importancia.
+\textbf{Contexto y Motivación}
 
-Se debe introducir el contexto del proyecto, el estado del arte en la temática, describir la propuesta de valor, cuál es el problema que atiende y cuál es la solución que se propone. Se debe dar una descripción funcional de la solución que incluya un diagrama en bloques.
+El proyecto ''\ttitle'' se enmarca dentro de un esfuerzo por mejorar la eficiencia y precisión de los censos de caracterización ciclista llevados a cabo por el Ente de la Movilidad de la ciudad de Rosario, provincia de Santa Fe, Argentina. Actualmente, estos censos se realizan manualmente por trabajadores de la institución, quienes relevan presencialmente los puntos de interés en intervalos de 15 minutos. La metodología actual no solo es ineficiente en términos de tiempo y recursos humanos, sino que también presenta riesgos en un contexto de inseguridad en la ciudad, lo cual impide el relevamiento de ciertos puntos de Rosario para evitar la exposición del personal. La implementación de un sistema de visión por computadora para automatizar los censos, aprovechando las cámaras de seguridad existentes, permitirá incrementar significativamente la eficiencia en la utilización de recursos, además de aumentar la precisión y granularidad de los datos recolectados. Adicionalmente, este sistema permitirá el seguimiento de las rutas y direcciones de los ciclistas mediante técnicas de tracking, proporcionando información valiosa para la planificación urbana. Es importante señalar que, debido a la naturaleza sensible de la información, en las imágenes utilizadas para la demostración pública del proyecto se deberán difuminar las caras de las personas y las matrículas de los vehículos particulares.
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+\textbf{Estado del Arte}
+
+En el campo de la visión por computadora, especialmente en el reconocimiento de objetos, se han logrado avances significativos en los últimos años. Modelos de libre acceso entrenados en grandes cantidades de datos han demostrado un alto poder de generalización. Adicionalmente, los modelos zero-shot han emergido como una tecnología prometedora, capaz de realizar inferencias sobre categorías no vistas durante el entrenamiento. Sin embargo, la aplicación específica de estos modelos para el monitoreo de la movilidad urbana, incluyendo la discriminación entre distintos tipos de ciclistas y vehículos, aún presenta desafíos que este proyecto pretende abordar.
+
+Los modelos mencionados, cuando se aplican a situaciones particulares como la detección en cámaras de videovigilancia, suelen presentar inconvenientes debido al ángulo de las mismas y las diferentes condiciones de iluminación. Reutilizar modelos previamente entrenados en grandes datasets mediante la técnica de aprendizaje transferido permite adaptarlos para mejorar la precisión y la relevancia de las detecciones en contextos específicos.
+
+\textbf{Descripción Funcional}
+
+El sistema propuesto consta de varios componentes que trabajan en conjunto para proporcionar una solución integral y eficiente para la automatización de los censos ciclistas. A continuación, se describe el flujo de trabajo del sistema, que se puede visualizar en el diagrama de bloques adjunto.
 
 \begin{itemize}
-	\item ¿Cuál es el contexto del proyecto, es un emprendimiento personal, un proyecto para una empresa, es parte del programa de vinculación con empresas del posgrado?
-	\item ¿Existen o aplican condiciones especiales al proyecto, financiamiento de algún programa público o privado, acuerdos de confidencialidad, acuerdos sobre la propiedad intelectual de los entregables u otros?
-	\item ¿Cómo se compara la solución propuesta con el estado del arte en el campo de aplicación? ¿En qué aspectos destaca?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está la solución que se propone?
-	\item ¿Cuáles son las características del cliente (el adoptante de los entregables del proyecto) qué valora, qué necesita?
-	\item ¿Por dónde pasa la innovación?
+	\item \textbf{Recepción y Preprocesamiento del Video:} El usuario inicia el proceso proporcionando un video proveniente de una cámara de videovigilancia. Este video se somete a un preprocesamiento que incluye la mejora de la calidad de imagen, en caso de ser necesario, y la eliminación de frames intermedios para evitar redundancia en la inferencia.
+
+	\item Detección y Tracking Inicial: El video preprocesado se introduce en el primer modelo de detección de categorías vehiculares, entrenado mediante transfer learning utilizando datos etiquetados de las cámaras de Rosario. Las detecciones se combinan con un sistema de tracking que permite seguir el movimiento de los objetos identificados a lo largo del video.
+
+	\item Análisis Heurístico: Las detecciones se someten a una heurística que relaciona las bicicletas con las personas detectadas para conformar la clase correspondiente a los ciclistas.
+
+	\item Inferencia de Género y Edad: Los ciclistas identificados pasan a un segundo modelo que infiere su género y rango etario en caso de ser posible.
+
+	\item Análisis de los Patrones de Movilidad: Utilizando el sistema de tracking, se asocia a cada ciclista la información correspondiente a su movimiento dentro de la escena.
+
+	\item Generación de Output: Como resultado, el sistema proporciona un video procesado con las detecciones y el conteo de vehículos y ciclistas. Adicionalmente, se generan imágenes de los ciclistas con etiquetas de demógrafía y movimiento dentro de la escena. Esta información se agrega en una planilla de datos, similar a la que actualmente usa el Ente de la Movilidad para realizar los censos, facilitando así la integración de los nuevos datos con los métodos de análisis existentes.
 \end{itemize}
 
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
-
-Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase como la siguiente: ``En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''.  La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
-
 \begin{figure}[htpb]
-\centering 
-\includegraphics[width=.65\textwidth]{./Figuras/diagBloques.png}
-\caption{Diagrama en bloques del sistema.}
-\label{fig:diagBloques}
+	\centering 
+	\includegraphics[width=.5\textwidth]{./figs/1-1_diagBloques.png}
+	\caption{Diagrama en bloques del sistema.}
+	\label{fig:diagBloques}
 \end{figure}
-
-\vspace{25px}
-
-El tamaño del texto en TODAS las figuras debe ser adecuado \textbf{para que NO pase lo que ocurre en la figura \ref{fig:diagBloques}}, donde el lector debe esforzarse para poder leer el texto. 
-
-Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama. Se recomienda evitar colores primarios (como rojo, verde o cyan) y usar la gama de colores pastel.
-\end{consigna}
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
-
-\begin{consigna}{red} % este comando se debe borrar para la entrega, junto con la contraparte \end{consigna}{red} 
-\textbf{Nota importante:} borrar esto y todas las consignas en color rojo antes de entregar este documento). Esto se hace eliminando el par de comandos que forman el bloque consigna, \verb!\begin{consigna}{red}! y \verb!\end{consigna}{red}! del código. 
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos. Si se considera que una persona cumple dos o más roles, entonces \textbf{solo dejarla en el rol más importante}. 
-
-Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, \textbf{no debe ser colocado también como miembro del equipo}.
-
 
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
@@ -158,88 +150,63 @@ Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+Cliente       & \clientename      &\empclientename	& Coordinadora del Departamento de Estadística 	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+Usuario final & Personal          & \empclientename	& Usuario  	\\ \hline
 \end{tabularx}
 \end{table}
 
-El Director suele ser uno de los orientadores.
 
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
 \begin{itemize}
-	\item Orientador: la Dra. Ing. María Gómez es experta en la temática y va a ayudar con la definición de los requerimientos y el desarrollo del firmware del embebido.
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
+	\item Cliente: \clientename conoce los requerimientos funcionales y va a brindar retorno contante acerca de la utilidad del proyecto.
+	\item Orientador: \supname es experto en la temática y va a ayudar con la definición de los requerimientos y el desarrollo del sistema.
+	\item Usuario Final: va a poner a prueba el sistema.
 \end{itemize}
-
-\end{consigna} % este comando se debe borrar para la entrega, junto con la contraparte \begin{consigna}{red}
 
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
+El propósito de este proyecto es mejorar la eficiencia y precisión de los censos de caracterización ciclista llevados a cabo por el Ente de la Movilidad de la ciudad de Rosario, mediante la implementación de un sistema automatizado basado en visión por computadora. Se busca optimizar el uso de recursos humanos y aumentar la exactitud de los datos recopilados, contribuyendo así a una mejor planificación urbana y movilidad sostenible.
 
-Se recomienda que sea solo un párrafo que continúe con la idea de la frase ``el propósito de este proyecto es...'' (omitir la frase, ya que está en el título de la sección).
-\end{consigna}
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
-
-Se refiere al trabajo que se va a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto. Por ejemplo:
-
 El proyecto incluye:
+
 \begin{itemize}
-	\item Ítem 1.
-	\item Ítem 2.
-		\begin{itemize}
-		\item Subítem 1.
-		\item Subítem 2.
-		\item ...
-		\end{itemize}
-	\item ...
-	
+    \item Desarrollo y entrenamiento de modelos de visión por computadora para la detección y seguimiento de vehículos y personas en vídeos de cámaras de seguridad.
+    \item Implementación de técnicas de transfer learning para adaptar modelos preentrenados a las condiciones específicas de las cámaras de videovigilancia de la ciudad de Rosario.
+    \item Integración de algoritmos de tracking para analizar la dirección y recorridos de ciclistas.
+    \item Desarrollo de una interfaz de usuario simple para la visualización de resultados y control del sistema automatizado.
+    \item Elaboración de documentación técnica detallada y plan de evaluación del modelo para verificar su desempeño y efectividad.
 \end{itemize}
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
+El presente proyecto no incluye:
 
-\end{consigna}
+\begin{itemize}
+    \item Desarrollo de hardware específico para la captura de imágenes o vídeos.
+    \item Mantenimiento a largo plazo del sistema después de la entrega inicial.
+    \item Integración con sistemas de gestión de tráfico o infraestructura urbana más amplia.
+    \item Ampliación del proyecto para cubrir otras áreas fuera de la movilidad ciclista definida inicialmente.
+\end{itemize}
 
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
+Para el desarrollo del presente proyecto se supone que:
 
 \begin{itemize}
-	\item Supuesto 1.
-	\item Supuesto 2.
-	\item ...
+    \item Se cuenta con acceso a videos de alta calidad y cantidad suficiente para la generación de sets de entrenamiento y prueba del modelo de visión por computadora.
+    \item Existe una comunicación fluida y continua con el cliente para la validación de requisitos y revisiones periódicas del avance del proyecto.
+    \item El cliente dispone de los recursos financieros necesarios para afrontar los costos derivados del procesamiento y cómputo requerido para el entrenamiento y evaluación del modelo.
+    \item Las condiciones macroeconómicas y reglamentarias no sufrirán cambios significativos que afecten la ejecución o presupuesto del proyecto.
+    \item Se cuenta con el soporte técnico adecuado para la implementación y mantenimiento inicial del sistema automatizado de censo ciclista.
 \end{itemize}
 
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
@@ -361,7 +328,7 @@ Una herramienta simple para desarrollar los diagramas es el Draw.io (\url{https:
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
+\includegraphics[width=.8\textwidth]{./figs/AoN.png}
 \caption{Diagrama de \textit{Activity on Node}.}
 \label{fig:AoN}
 \end{figure}
@@ -451,7 +418,7 @@ ajustar este valor y, quizás, acortar los nombres de las tareas.
 \begin{landscape}
 \begin{figure}[htpb]
 \centering 
-\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
+\includegraphics[height=.85\textheight]{./figs/Gantt-2.png}
 \caption{Ejemplo de diagrama de Gantt (apaisado).} %Modificar este título acorde.
 \label{fig:diagGantt}
 \end{figure}
